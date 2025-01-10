@@ -1,5 +1,6 @@
 import httpx
-from config import GITHUB_TOKEN
+
+from app.config import GITHUB_TOKEN
 
 
 async def get_github_files(repo_url: str, path: str = '') -> list:
