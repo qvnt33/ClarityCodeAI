@@ -1,6 +1,10 @@
+import logging
+
 import httpx
 
 from app.config import GITHUB_TOKEN
+
+logger: logging.Logger = logging.getLogger(__name__)
 
 
 async def get_github_files(repo_url: str, path: str = '') -> list:
@@ -23,6 +27,7 @@ async def get_github_files(repo_url: str, path: str = '') -> list:
         response: httpx.Response = await client.get(api_url,
                                                     headers=headers)
         if response.status_code != 200:
+            logger.warning(f'Get incorrect answer from GitHub API: {response.status_code}')
             raise Exception(f'GitHub API error: {response.status_code} {response.text}')
 
         files = response.json()
@@ -38,7 +43,7 @@ async def get_github_files(repo_url: str, path: str = '') -> list:
                         'content': file_response.text,
                     })
             elif file['type'] == 'dir':
-                # Repeat recursively
+                logger.info(f'Entering directory: {file["path"]}')
                 folder_files: list = await get_github_files(repo_url, file['path'])
                 file_data.extend(folder_files)
         return file_data
