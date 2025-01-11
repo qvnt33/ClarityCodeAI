@@ -1,5 +1,6 @@
 import json
 import logging
+from typing import Any, Awaitable
 
 import httpx
 import redis
@@ -11,17 +12,17 @@ logger: logging.Logger = logging.getLogger(__name__)
 redis_client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 
 
-async def get_github_files(repo_url: str, path: str = '') -> list[dict[str, str]]:
+async def get_github_files(repo_url: str, path: str = '') -> list[dict[str, str]] | Any:
     """Returns a list of files with their contents from a GitHub repository, including subdirectories.
     :param repo_url: URL repository.
     :param path: Path ot folder in repository.
     :return: List of files with their contents (name, path to file from main, content)
     """
     # Generate unique key for redis-cache
-    cache_key = f'github_files:{repo_url}:{path}'
+    cache_key: str = f'github_files:{repo_url}:{path}'
 
     # Check data in redis-cache
-    cached_data = redis_client.get(cache_key)
+    cached_data = await redis_client.get(cache_key)
     if cached_data:
         logger.info(f'Cache hit for {cache_key}')
         return json.loads(cached_data)
@@ -42,7 +43,7 @@ async def get_github_files(repo_url: str, path: str = '') -> list[dict[str, str]
             raise Exception(f'GitHub API error: {response.status_code} {response.text}')
 
         files = response.json()
-        file_data: list = []
+        file_data: list[dict[str, str]] = []
 
         for file in files:
             if file['type'] == 'file':
@@ -55,7 +56,7 @@ async def get_github_files(repo_url: str, path: str = '') -> list[dict[str, str]
                     })
             elif file['type'] == 'dir':
                 logger.info(f'Entering directory: {file["path"]}')
-                folder_files: list = await get_github_files(repo_url, file['path'])
+                folder_files: list[dict[str, str]] | Any = await get_github_files(repo_url, file['path'])
                 file_data.extend(folder_files)
 
         # Save result in redis-cache on 1 hour

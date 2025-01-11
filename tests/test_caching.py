@@ -1,12 +1,13 @@
 from fastapi.testclient import TestClient
 from httpx import Response
+from pytest_mock.plugin import MockerFixture
 
 from app.main import app
 
 client = TestClient(app)
 
 
-def test_review_assignment_caching(mocker) -> None:
+def test_review_assignment_caching(mocker: MockerFixture) -> None:
     """Test for caching with Redis"""
     mock_redis = mocker.patch('app.utils.github_client.redis_client')
     mock_redis.get.return_value = None  # Cache not has data

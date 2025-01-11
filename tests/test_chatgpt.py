@@ -1,12 +1,13 @@
 from fastapi.testclient import TestClient
 from httpx import Response
+from pytest_mock.plugin import MockerFixture
 
 from app.main import app
 
 client = TestClient(app)
 
 
-def test_review_assignment_gpt_error(mocker) -> None:
+def test_review_assignment_gpt_error(mocker: MockerFixture) -> None:
     """Test for ChatGPT API"""
     mocker.patch(
         'app.main.analyze_code_with_gpt',

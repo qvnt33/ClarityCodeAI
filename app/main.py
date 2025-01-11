@@ -34,7 +34,7 @@ class ReviewResponse(BaseModel):
 
 
 @app.post('/review-assignment', response_model=ReviewResponse)
-async def review_assignment(request: AssignmentRequest) -> dict:
+async def review_assignment(request: AssignmentRequest) -> dict[str, str]:
     """Rout for processing POST request"""
     try:
         assignment_description: str = request.assignment_description

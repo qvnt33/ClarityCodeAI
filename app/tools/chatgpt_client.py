@@ -2,6 +2,7 @@ import hashlib
 import json
 import logging
 import re
+from typing import Any
 
 import redis
 from fastapi import HTTPException
@@ -21,7 +22,7 @@ redis_client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 
 async def analyze_code_with_gpt(combined_code: str,
                                 candidate_level: str,
-                                assignment_description: str) -> dict[str, str]:
+                                assignment_description: str) -> dict[str, str] | Any:
     """Analyzes code using OpenAI GPT API.
     :param combined_code: Combined code from all GitHub files.
     :param candidate_level: Level of candidate (Junior, Middle, Senior)
@@ -32,7 +33,7 @@ async def analyze_code_with_gpt(combined_code: str,
     cache_key: str = hashlib.sha256(f'{combined_code}_{candidate_level}_{assignment_description}'.encode()).hexdigest()
 
     # Check data in redis-cache
-    cached_result = redis_client.get(cache_key)
+    cached_result = await redis_client.get(cache_key)
     if cached_result:
         return json.loads(cached_result)
 
@@ -54,7 +55,7 @@ async def analyze_code_with_gpt(combined_code: str,
         review: str | None = completion.choices[0].message.content  # All code review from ChatGPT
         logger.info(f'GPT response: {review}')
 
-        result = formatting_review_result(review)
+        result: dict[str, str] = formatting_review_result(review)
 
         # Save result in redis-cache on 1 hour
         redis_client.set(cache_key, json.dumps(result), ex=3600)
@@ -64,7 +65,7 @@ async def analyze_code_with_gpt(combined_code: str,
         raise HTTPException(status_code=500, detail=f'ChatGPT API error: {e}') from e
 
 
-def formatting_review_result(review: str) -> dict[str, str]:
+def formatting_review_result(review: str | None) -> dict[str, str]:
     """Formats review result from string format to dictionary with key and value when received by OpenAI API.
     :param review: Analyze by OpenAI API.
     :return: Formatted structured data.
@@ -76,12 +77,14 @@ def formatting_review_result(review: str) -> dict[str, str]:
     }
 
 
-def divides_review_result(text: str, section_name: str) -> str:
+def divides_review_result(text: str | None, section_name: str) -> str:
     """Divides review result by ChatGPT into section content. Use regular functions.
     :param text: Full review result by ChatGPT.
     :param section_name: Name section to find.
     :return: Sections content.
     """
+    if text is None:
+        text = ''
     try:
         # Template for divide section
         pattern: str = rf'### {re.escape(section_name)}:\s*(.*?)(?=###|$)'

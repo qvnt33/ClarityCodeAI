@@ -16,7 +16,7 @@ def prepare_code_for_analysis(files: list[dict[str, str]]) -> str:
 
     for file in files:
         file_name: str = f'# File: {file.get('name', '')}'
-        file_content: str | None = file.get('content', '')
+        file_content: str = file.get('content', '')
         lst_combined_files.append('\n'.join([file_name, file_content]))
 
     return '\n\n'.join(lst_combined_files)
