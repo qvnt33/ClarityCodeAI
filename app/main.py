@@ -1,5 +1,6 @@
 import json
 import logging
+import logging.config
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
@@ -48,12 +49,16 @@ async def review_assignment(request: AssignmentRequest) -> dict:
         combined_code: str = prepare_code_for_analysis(github_files)  # Combined code
 
         # GPT code analysis
-        result: dict[str, str] = await analyze_code_with_gpt(
-            combined_code=combined_code,
-            candidate_level=candidate_level,
-            assignment_description=assignment_description,
-        )
-        logger.info('ChatGPT response received successfully.')
+        try:
+            result: dict[str, str] = await analyze_code_with_gpt(
+                combined_code=combined_code,
+                candidate_level=candidate_level,
+                assignment_description=assignment_description,
+            )
+            logger.info('ChatGPT response received successfully.')
+        except Exception as e:
+            logger.error(f'GPT API error: {e}')
+            raise HTTPException(status_code=500, detail=f'GPT API error: {str(e)}') from e
 
         # Add list of files to result
         file_list: str = combines_github_files(github_files)  # String of joined GitHub files
