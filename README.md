@@ -52,7 +52,6 @@ pip install -r requirements.txt
 	- `GITHUB_TOKEN=<your_github_token>`
 	- `REDIS_HOST=localhost` (*Локально*)
 	- `REDIS_HOST=redis` (*Docker*)
-	- `REDIS_PORT=6379`
 
 ## Запуск проєкту (локально)
 

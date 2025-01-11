@@ -5,9 +5,9 @@ import logging.config
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from app.utils.chatgpt_client import analyze_code_with_gpt
-from app.utils.github_client import get_github_files
-from app.utils.tools import combines_github_files, prepare_code_for_analysis
+from app.tools.chatgpt_client import analyze_code_with_gpt
+from app.tools.github_client import get_github_files
+from app.tools.tools import combines_github_files, prepare_code_for_analysis
 
 # Logger configuration
 with open('logging.conf') as file:
@@ -34,7 +34,7 @@ class ReviewResponse(BaseModel):
 
 
 @app.post('/review-assignment', response_model=ReviewResponse)
-async def review_assignment(request: AssignmentRequest) -> dict:
+async def review_assignment(request: AssignmentRequest) -> dict[str, str]:
     """Rout for processing POST request"""
     try:
         assignment_description: str = request.assignment_description

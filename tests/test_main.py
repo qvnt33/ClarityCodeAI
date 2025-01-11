@@ -1,12 +1,13 @@
 from fastapi.testclient import TestClient
 from httpx import Response
+from pytest_mock.plugin import MockerFixture
 
 from app.main import app
 
 client = TestClient(app)
 
 
-def test_review_assignment_large_repo(mocker) -> None:
+def test_review_assignment_large_repo(mocker: MockerFixture) -> None:
     """Test for checking work with big repositories (100+ files) API"""
     mocker.patch(
         'app.main.get_github_files',

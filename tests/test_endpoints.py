@@ -55,7 +55,7 @@ def test_review_assignment_missing_field() -> None:
 
 
 @pytest.mark.parametrize('candidate_level', ['Junior', 'Middle', 'Senior'])
-def test_review_assignment_candidate_levels(candidate_level) -> None:
+def test_review_assignment_candidate_levels(candidate_level: str) -> None:
     """Test for checking work with different levels of cadidates"""
     payload: dict[str, str] = {
         'assignment_description': 'Test assignment',
