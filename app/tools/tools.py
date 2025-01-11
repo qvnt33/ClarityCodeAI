@@ -7,7 +7,7 @@ def combines_github_files(github_files: list[dict[str, str]]) -> str:
     return '\n'.join(file_list)
 
 
-def prepare_code_for_analysis(files: list[dict]) -> str:
+def prepare_code_for_analysis(files: list[dict[str, str]]) -> str:
     """Combines code from all GitHub files in one text for handling to OpenAI API.
     :param files: List of files with their contents ({'name': str, 'path': str, 'content': str})
     :return: Combined code for analysis.
