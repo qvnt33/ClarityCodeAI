@@ -1,11 +1,12 @@
 import json
 import logging
-import logging.config
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from app.utils.chatgpt_client import get_chatgpt_response
+from app.utils.chatgpt_client import analyze_code_with_gpt
+from app.utils.github_client import get_github_files
+from app.utils.tools import combines_github_files, prepare_code_for_analysis
 
 # Logger configuration
 with open('logging.conf') as file:
@@ -19,18 +20,46 @@ app = FastAPI()
 
 
 class AssignmentRequest(BaseModel):
-    assignment_description: str = Field(description='Description of the coding assignment')
-    github_repo_url: str = Field(description='URL of the GitHub repository to review')
-    candidate_level: str = Field(description='Junior, Middle or Senior')
+    assignment_description: str = Field(description='Description of the coding assignment.')
+    github_repo_url: str = Field(description='URL of the GitHub repository to review.')
+    candidate_level: str = Field(description='Junior, Middle or Senior.')
 
 
-# Rout for processing POST request
-@app.post('/review-assignment')
-async def review_assignment(request: AssignmentRequest) -> str:
-    assignment_description = request.assignment_description
-    github_repo_url = request.github_repo_url
-    candidate_level = request. candidate_level
+class ReviewResponse(BaseModel):
+    downsides_comments: str = Field(description='All downsides comments from ChatGPT.')
+    rating: str = Field(description='Score of code from ChatGPT. Format: Score/10.')
+    conclusion: str = Field(description='Final conclusion of project from ChatGPT.')
+    file_list: str = Field(description='Joined list of files from GitHub API.')
 
-    result = await get_chatgpt_response('як тебе звати?')
 
-    return result
+@app.post('/review-assignment', response_model=ReviewResponse)
+async def review_assignment(request: AssignmentRequest) -> dict:
+    """Rout for processing POST request"""
+    try:
+        assignment_description: str = request.assignment_description
+        github_repo_url: str = request.github_repo_url
+        candidate_level: str = request.candidate_level
+
+        logger.info(f'Received assignment: {assignment_description}, '
+                    f'Repo URL: {github_repo_url}, '
+                    f'Level: {candidate_level}')
+
+        github_files: list = await get_github_files(github_repo_url)  # GitHub files with their contents
+        combined_code: str = prepare_code_for_analysis(github_files)  # Combined code
+
+        # GPT code analysis
+        result: dict[str, str] = await analyze_code_with_gpt(
+            combined_code=combined_code,
+            candidate_level=candidate_level,
+            assignment_description=assignment_description,
+        )
+        logger.info('ChatGPT response received successfully.')
+
+        # Add list of files to result
+        file_list: str = combines_github_files(github_files)  # String of joined GitHub files
+        result['file_list'] = file_list
+
+        return result
+    except Exception as e:
+        logger.error(f'review-assignment error: {e}')
+        raise HTTPException(status_code=500, detail=f'review-assignment error: {e}') from e
