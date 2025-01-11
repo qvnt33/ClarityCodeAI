@@ -8,7 +8,7 @@ from fastapi import HTTPException
 from openai import AsyncOpenAI
 from openai.types.chat.chat_completion import ChatCompletion
 
-from app.config import OPENAI_API_KEY, PROMPT_FOR_ANALYZE_CODE
+from app.config import OPENAI_API_KEY, PROMPT_FOR_ANALYZE_CODE, REDIS_HOST, REDIS_PORT
 
 logger: logging.Logger = logging.getLogger(__name__)
 
@@ -16,7 +16,7 @@ client = AsyncOpenAI(
     api_key=OPENAI_API_KEY,
 )
 
-redis_client = redis.Redis(host='localhost', port=6379, db=0)
+redis_client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 
 
 async def analyze_code_with_gpt(combined_code: str,

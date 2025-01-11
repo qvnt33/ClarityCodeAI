@@ -4,11 +4,11 @@ import logging
 import httpx
 import redis
 
-from app.config import GITHUB_TOKEN
+from app.config import GITHUB_TOKEN, REDIS_HOST, REDIS_PORT
 
 logger: logging.Logger = logging.getLogger(__name__)
 
-redis_client = redis.Redis(host='localhost', port=6379, db=0)
+redis_client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 
 
 async def get_github_files(repo_url: str, path: str = '') -> list[dict[str, str]]:
