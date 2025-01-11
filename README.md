@@ -9,7 +9,7 @@
 ## **Функціонал**
 
 - Отримання файлів із заданого репозиторію через **GitHub API**.
-- Аналіз коду за допомогою **OpenAI GPT API** (GPT-4).
+- Аналіз коду за допомогою **OpenAI GPT API** (GPT-4o).
 - Генерація висновків:
 	- Недоліки.
 	- Оцінка (0–10).
@@ -17,11 +17,11 @@
 - Кешування відповідей за допомогою **Redis**.
 - Використання **Docker** для розгортання проєкту.
 
-## Інструкція з налаштування (локально)
+## Інструкція з налаштуванняx
 
 ### 1. Клонування репозиторію
 ```
-git clone https://github.com/your_username/clarity-code-ai.git
+git clone https://github.com/qvnt33/ClarityCodeAI.git
 cd clarity-code-ai
 ```
 
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 ### Запуск FastAPI
 
 ```
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 Сервер буде доступний за адресою: `http://127.0.0.1:8000/`.
 
