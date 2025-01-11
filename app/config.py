@@ -7,6 +7,8 @@ load_dotenv(find_dotenv(filename='.env'))
 
 OPENAI_API_KEY: str | None = os.getenv('OPENAI_API_KEY')
 GITHUB_TOKEN: str | None = os.getenv('GITHUB_TOKEN')
+REDIS_HOST: str | None = os.getenv('REDIS_HOST')
+REDIS_PORT: int = int(os.getenv('REDIS_PORT'))
 
 PROMPT_FOR_ANALYZE_CODE = """
 Analyze the following code critically and provide constructive feedback. Be as honest and strict as possible in your evaluation, highlighting both strengths and weaknesses, even if they are significant. Adjust your evaluation based on the developer level (Junior, Middle, Senior) as follows:
@@ -45,6 +47,3 @@ Assignment Description: {assignment_description}
 Here is the code:
 {combined_code}
 """
-
-REDIS_HOST = 'redis'
-REDIS_PORT = 6379
