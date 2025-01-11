@@ -44,7 +44,7 @@ async def analyze_code_with_gpt(combined_code: str,
 
     try:
         completion: ChatCompletion = await client.chat.completions.create(
-        model='gpt-3.5-turbo',
+        model='gpt-4o',
         messages=[
             {'role': 'system', 'content': 'You are an expert code reviewer.'},
             {'role': 'user', 'content': prompt},
