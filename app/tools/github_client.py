@@ -1,10 +1,6 @@
 import json
 import logging
-<<<<<<< HEAD
-from typing import Any, Awaitable
-=======
 from typing import Any
->>>>>>> develop
 
 import httpx
 import redis
