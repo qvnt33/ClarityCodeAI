@@ -1,4 +1,4 @@
-def combines_github_files(github_files: list[dict]) -> str:
+def combines_github_files(github_files: list[dict[str, str]]) -> str:
     """Returns combined list of files from GitHub API.
     :param github_files: GitHub files with their contents.
     :return: List of files in format string.

@@ -1,6 +1,9 @@
+import hashlib
+import json
 import logging
 import re
 
+import redis
 from fastapi import HTTPException
 from openai import AsyncOpenAI
 from openai.types.chat.chat_completion import ChatCompletion
@@ -13,6 +16,8 @@ client = AsyncOpenAI(
     api_key=OPENAI_API_KEY,
 )
 
+redis_client = redis.Redis(host='localhost', port=6379, db=0)
+
 
 async def analyze_code_with_gpt(combined_code: str,
                                 candidate_level: str,
@@ -23,11 +28,20 @@ async def analyze_code_with_gpt(combined_code: str,
     :param assignment_description
     :return: Result of analyze in format dictionary {'downsides': ..., 'rating': ..., 'conclusion': ...}
     """
+    # Generate unique key for redis-cache
+    cache_key: str = hashlib.sha256(f'{combined_code}_{candidate_level}_{assignment_description}'.encode()).hexdigest()
+
+    # Check data in redis-cache
+    cached_result = redis_client.get(cache_key)
+    if cached_result:
+        return json.loads(cached_result)
+
     prompt: str = PROMPT_FOR_ANALYZE_CODE.format(
         combined_code=combined_code,
         candidate_level=candidate_level,
         assignment_description=assignment_description,
         )
+
     try:
         completion: ChatCompletion = await client.chat.completions.create(
         model='gpt-3.5-turbo',
@@ -40,9 +54,11 @@ async def analyze_code_with_gpt(combined_code: str,
         review: str | None = completion.choices[0].message.content  # All code review from ChatGPT
         logger.info(f'GPT response: {review}')
 
-        # print(review)
-        # print(parse_review_result(review))
-        return formatting_review_result(review)
+        result = formatting_review_result(review)
+
+        # Save result in redis-cache on 1 hour
+        redis_client.set(cache_key, json.dumps(result), ex=3600)
+        return result
     except Exception as e:
         logger.error(f'ChatGPT API error: {e}')
         raise HTTPException(status_code=500, detail=f'ChatGPT API error: {e}') from e

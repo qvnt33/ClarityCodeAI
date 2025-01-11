@@ -1,22 +1,33 @@
+import json
 import logging
 
 import httpx
+import redis
 
 from app.config import GITHUB_TOKEN
 
 logger: logging.Logger = logging.getLogger(__name__)
 
+redis_client = redis.Redis(host='localhost', port=6379, db=0)
 
-async def get_github_files(repo_url: str, path: str = '') -> list:
+
+async def get_github_files(repo_url: str, path: str = '') -> list[dict[str, str]]:
     """Returns a list of files with their contents from a GitHub repository, including subdirectories.
-
-    Args:
-        repo_url (str): URL repository
-        path (str): Path to folder in repository
-
-    Returns:
-        list[dict]: List of files with their contents (name, path to file from main, content)
+    :param repo_url: URL repository.
+    :param path: Path ot folder in repository.
+    :return: List of files with their contents (name, path to file from main, content)
     """
+    # Generate unique key for redis-cache
+    cache_key = f'github_files:{repo_url}:{path}'
+
+    # Check data in redis-cache
+    cached_data = redis_client.get(cache_key)
+    if cached_data:
+        logger.info(f'Cache hit for {cache_key}')
+        return json.loads(cached_data)
+
+    # Якщо даних немає в кеші, робимо запит до GitHub API
+    logger.info(f'Cache miss for {cache_key}')
     url_parts: list[str] = repo_url.rstrip('/').split('/')
     owner, repo = url_parts[-2], url_parts[-1]
 
@@ -46,4 +57,8 @@ async def get_github_files(repo_url: str, path: str = '') -> list:
                 logger.info(f'Entering directory: {file["path"]}')
                 folder_files: list = await get_github_files(repo_url, file['path'])
                 file_data.extend(folder_files)
+
+        # Save result in redis-cache on 1 hour
+        redis_client.set(cache_key, json.dumps(file_data), ex=3600)
+
         return file_data

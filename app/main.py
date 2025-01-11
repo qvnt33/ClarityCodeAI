@@ -44,7 +44,7 @@ async def review_assignment(request: AssignmentRequest) -> dict:
                     f'Repo URL: {github_repo_url}, '
                     f'Level: {candidate_level}')
 
-        github_files: list = await get_github_files(github_repo_url)  # GitHub files with their contents
+        github_files: list[dict[str, str]] = await get_github_files(github_repo_url)  # GitHub files with their contents
         combined_code: str = prepare_code_for_analysis(github_files)  # Combined code
 
         # GPT code analysis
