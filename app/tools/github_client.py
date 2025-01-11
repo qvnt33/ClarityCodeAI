@@ -22,7 +22,7 @@ async def get_github_files(repo_url: str, path: str = '') -> list[dict[str, str]
     cache_key: str = f'github_files:{repo_url}:{path}'
 
     # Check data in redis-cache
-    cached_data = await redis_client.get(cache_key)
+    cached_data: Any = redis_client.get(cache_key)
     if cached_data:
         logger.info(f'Cache hit for {cache_key}')
         return json.loads(cached_data)

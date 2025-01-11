@@ -33,7 +33,7 @@ async def analyze_code_with_gpt(combined_code: str,
     cache_key: str = hashlib.sha256(f'{combined_code}_{candidate_level}_{assignment_description}'.encode()).hexdigest()
 
     # Check data in redis-cache
-    cached_result = await redis_client.get(cache_key)
+    cached_result: Any = redis_client.get(cache_key)
     if cached_result:
         return json.loads(cached_result)
 
