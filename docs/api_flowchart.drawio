@@ -1,0 +1,189 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="Сторінка-1" id="gSfW2rPpCncxHXXwAEww">
+    <mxGraphModel dx="4198" dy="4652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=13;align=center;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-3" target="LyUXGMGMt4qC3a-mZB1P-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-3" value="Start" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Verdana;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-447.38" y="-1570" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-4" target="LyUXGMGMt4qC3a-mZB1P-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-4" value="Client" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-452.38" y="-1470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-5" target="LyUXGMGMt4qC3a-mZB1P-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-5" value="&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: &amp;quot;.AppleSystemUIFontMonospaced&amp;quot;; color: rgb(14, 14, 14);&quot; class=&quot;p1&quot;&gt;/review-assignment&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-452.38" y="-1380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-6" target="LyUXGMGMt4qC3a-mZB1P-92">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-387.3800000000001" y="-1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-6" value="FastAPI" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-452.38" y="-1290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;align=center;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-8" target="LyUXGMGMt4qC3a-mZB1P-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-129" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=25;" vertex="1" connectable="0" parent="LyUXGMGMt4qC3a-mZB1P-64">
+          <mxGeometry x="-0.5973" y="2" relative="1" as="geometry">
+            <mxPoint y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-8" value="GitHub Files&lt;div&gt;in redis-cache?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-542.38" y="-1050" width="192.38" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=13;align=center;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-11" target="LyUXGMGMt4qC3a-mZB1P-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-162" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=25;" vertex="1" connectable="0" parent="LyUXGMGMt4qC3a-mZB1P-78">
+          <mxGeometry x="-0.6404" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;align=center;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-11" target="LyUXGMGMt4qC3a-mZB1P-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-161" value="0" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=25;" vertex="1" connectable="0" parent="LyUXGMGMt4qC3a-mZB1P-85">
+          <mxGeometry x="-0.381" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-11" value="Analysis by ChatGPT&lt;div&gt;in redis-cache?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-506.19" y="-420" width="192.38" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="97.61999999999989" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-151" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-53" target="LyUXGMGMt4qC3a-mZB1P-149">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-53" value="GitHub API" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="-960" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;align=center;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-8" target="LyUXGMGMt4qC3a-mZB1P-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-128" value="0" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=25;" vertex="1" connectable="0" parent="LyUXGMGMt4qC3a-mZB1P-54">
+          <mxGeometry x="-0.5496" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-132" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-57" target="LyUXGMGMt4qC3a-mZB1P-130">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-57" value="Redis Cache" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-332.38" y="-900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-66" value="&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: &amp;quot;.AppleSystemUIFontMonospaced&amp;quot;; color: rgb(14, 14, 14);&quot; class=&quot;p1&quot;&gt;Save&lt;/p&gt;&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: &amp;quot;.AppleSystemUIFontMonospaced&amp;quot;; color: rgb(14, 14, 14);&quot; class=&quot;p1&quot;&gt;GitHub Files&lt;/p&gt;&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: &amp;quot;.AppleSystemUIFontMonospaced&amp;quot;; color: rgb(14, 14, 14);&quot; class=&quot;p1&quot;&gt;in redis-cache&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-770" y="-560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-143" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-77" target="LyUXGMGMt4qC3a-mZB1P-140">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-77" value="Redis Cache" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-313.81" y="-270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-83" value="&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: &amp;quot;.AppleSystemUIFontMonospaced&amp;quot;; color: rgb(14, 14, 14);&quot; class=&quot;p1&quot;&gt;Save Redis Cache&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-138" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-84" target="LyUXGMGMt4qC3a-mZB1P-136">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-84" value="ChatGPT API" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-650" y="-340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-92" target="LyUXGMGMt4qC3a-mZB1P-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-92" value="Redis" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-452.38" y="-1200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-95" target="LyUXGMGMt4qC3a-mZB1P-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-95" value="Redis" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-770" y="-650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-98" target="LyUXGMGMt4qC3a-mZB1P-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-98" value="Redis" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-470" y="-530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-103" target="LyUXGMGMt4qC3a-mZB1P-83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-103" value="Redis" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-148" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-130" target="LyUXGMGMt4qC3a-mZB1P-98">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-130" value="GET&lt;div&gt;GitHub Files&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;align=center;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-470" y="-645" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-145" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-136" target="LyUXGMGMt4qC3a-mZB1P-144">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-136" value="&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: &amp;quot;.AppleSystemUIFontMonospaced&amp;quot;; color: rgb(14, 14, 14);&quot; class=&quot;p1&quot;&gt;Code Analysis&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-650" y="-240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-157" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-140" target="LyUXGMGMt4qC3a-mZB1P-155">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-140" value="GET&lt;div&gt;Code Analysis&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;align=center;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-433.81" y="-10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-147" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-144" target="LyUXGMGMt4qC3a-mZB1P-140">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-167" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-144" target="LyUXGMGMt4qC3a-mZB1P-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-144" value="Analysis by ChatGPT" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-590" y="-90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-152" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-149" target="LyUXGMGMt4qC3a-mZB1P-150">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-149" value="&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: &amp;quot;.AppleSystemUIFontMonospaced&amp;quot;; color: rgb(14, 14, 14);&quot; class=&quot;p1&quot;&gt;Get GitHub Files from repository&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="-860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-153" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-150" target="LyUXGMGMt4qC3a-mZB1P-130">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-165" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-150" target="LyUXGMGMt4qC3a-mZB1P-95">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-150" value="GitHub Files" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-620" y="-730" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-159" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;fontSize=13;" edge="1" parent="1" source="LyUXGMGMt4qC3a-mZB1P-155" target="LyUXGMGMt4qC3a-mZB1P-156">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-155" value="Client" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-433.81" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LyUXGMGMt4qC3a-mZB1P-156" value="End" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Verdana;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-428.81" y="250" width="110" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
